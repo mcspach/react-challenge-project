@@ -20,6 +20,10 @@ class ViewOrders extends Component {
             });
     }
 
+    formatDigits(n) {
+        return ( n < 10 ? '0' : '' ) + n;
+    }
+
     render() {
         return (
             <Template>
@@ -33,7 +37,7 @@ class ViewOrders extends Component {
                                     <p>Ordered by: {order.ordered_by || ''}</p>
                                 </div>
                                 <div className="col-md-4 d-flex view-order-middle-col">
-                                    <p>Order placed at {`${createdDate.getHours()}:${createdDate.getMinutes()}:${createdDate.getSeconds()}`}</p>
+                                    <p>Order placed at {`${this.formatDigits(createdDate.getHours())}:${this.formatDigits(createdDate.getMinutes())}:${this.formatDigits(createdDate.getSeconds())}`}</p>
                                     <p>Quantity: {order.quantity}</p>
                                  </div>
                                  <div className="col-md-4 view-order-right-col">
