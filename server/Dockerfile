@@ -1,4 +1,4 @@
-FROM node:11
+FROM node:14.17.1
 
 RUN ln -fs /usr/share/zoneinfo/US/Pacific-New /etc/localtime && dpkg-reconfigure -f noninteractive tzdata
 
